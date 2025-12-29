@@ -22,6 +22,7 @@ export interface PlantInstance {
   health: number;
   plantedAt: number;
   lastUpdate: number;
+  maturedAtDay?: number; // Jour de jeu où la croissance a atteint 100%
 }
 
 export interface GameState {

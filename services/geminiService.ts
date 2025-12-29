@@ -22,7 +22,7 @@ export const getGardenAdvice = async (
   }).join("; ");
 
   const prompt = `
-    Tu es un expert en hydroponie pour le système Myfanjan. 
+    Tu es un expert en hydroponie pour le système Hydro Lab MyFanjan. 
     Conditions actuelles : Température ${conditions.temp}°C, pH ${conditions.ph}, EC ${conditions.ec}, Lumière ${conditions.light}%.
     État des cultures : ${plantContext}.
     Donne un conseil technique très court (maximum 15 mots) sur le réglage NPK ou pH/EC pour maximiser la santé des plantes.

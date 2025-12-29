@@ -18,7 +18,7 @@ export const PLANT_DEFS: Record<PlantType, PlantStats> = {
     idealEC: 1.0, // EC faible (0.8 - 1.2 mS/cm)
     growthRate: 3.333, // ~30 jours
     difficulty: 1,
-    cost: 0.10,
+    cost: 0.30,
     value: 2.80,
   },
   Parsley: {
@@ -31,7 +31,7 @@ export const PLANT_DEFS: Record<PlantType, PlantStats> = {
     idealEC: 1.4, // EC modérée (1.0 - 1.8 mS/cm)
     growthRate: 1.333, // ~75 jours (lent)
     difficulty: 2,
-    cost: 0.20,
+    cost: 1.00,
     value: 4.00,
   },
   Tomato: {
@@ -44,7 +44,7 @@ export const PLANT_DEFS: Record<PlantType, PlantStats> = {
     idealEC: 2.8, // EC élevée (2.0 - 5.0 mS/cm)
     growthRate: 1.538, // ~65 jours
     difficulty: 4,
-    cost: 0.20,
+    cost: 1.00,
     value: 10.00,
   },
   GreenOnion: {
@@ -57,7 +57,7 @@ export const PLANT_DEFS: Record<PlantType, PlantStats> = {
     idealEC: 1.6, // EC modérée (1.4 - 1.8 mS/cm)
     growthRate: 4.545, // ~22 jours
     difficulty: 1,
-    cost: 0.10,
+    cost: 1.00,
     value: 2.00,
   },
 };
