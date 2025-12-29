@@ -1,14 +1,16 @@
 
 import { GoogleGenAI } from "@google/genai";
-import { PlantInstance, PlantType } from '../types';
+import { PlantInstance } from '../types';
 import { PLANT_DEFS } from '../constants';
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+// Utilisation de process.env.API_KEY comme requis par les instructions.
+// On cast en string pour éviter les erreurs de type au déploiement.
+const ai = new GoogleGenAI({ apiKey: process.env.API_KEY as string });
 
 export const getGardenAdvice = async (
   plants: (PlantInstance | null)[],
   conditions: { temp: number; water: number; nutrients: number; light: number; ph?: number; ec?: number }
-) => {
+): Promise<string> => {
   const activePlants = plants.filter(p => p !== null) as PlantInstance[];
   
   if (activePlants.length === 0) {
@@ -32,8 +34,10 @@ export const getGardenAdvice = async (
       model: 'gemini-3-flash-preview',
       contents: prompt,
     });
-    return response.text;
+    // Correction TS2345 : on s'assure de retourner une string (jamais undefined)
+    return response.text ?? "Analysez vos paramètres pour optimiser la croissance.";
   } catch (error) {
+    console.error("Erreur Gemini Service:", error);
     return "Vérifiez votre pH, un écart important bloque l'assimilation des nutriments.";
   }
 };
